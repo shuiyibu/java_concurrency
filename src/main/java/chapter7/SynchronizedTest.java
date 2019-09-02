@@ -14,7 +14,7 @@ public class SynchronizedTest {
         Runnable runnable = () -> {
             synchronized (LOCK) {
                 try {
-                    Thread.sleep(200_000);
+                    Thread.sleep(100_000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

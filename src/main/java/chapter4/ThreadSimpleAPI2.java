@@ -2,11 +2,9 @@ package chapter4;
 
 import java.util.Optional;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/17 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * setPriority并没有起到效果，难道是并行的原因？
+ */
 public class ThreadSimpleAPI2 {
 
     public static void main(String[] args) {

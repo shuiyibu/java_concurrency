@@ -1,10 +1,8 @@
 package chapter4;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/17 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ *
+ */
 public class DaemonThread2 {
     public static void main(String[] args) {
 
@@ -20,7 +18,7 @@ public class DaemonThread2 {
                 }
             });
 
-            //innerThread.setDaemon(true);
+            innerThread.setDaemon(true);
             innerThread.start();
 
             try {

@@ -1,29 +1,24 @@
 package chapter4;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/17 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ *
+ */
 public class DaemonThread {
 
     public static void main(String[] args) throws InterruptedException {
 
-        Thread t = new Thread() {
-
-            @Override
-            public void run() {
-                try {
-                    System.out.println(Thread.currentThread().getName() + " running");
-                    Thread.sleep(100000);
-                    System.out.println(Thread.currentThread().getName() + " done.");
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        Thread t = new Thread(() -> {
+            try {
+                System.out.println(Thread.currentThread().getName() + " running");
+                Thread.sleep(10000);
+                System.out.println(Thread.currentThread().getName() + " done.");
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        }; //new
-        t.start();
-        t.setDaemon(true);
+        }); //new
+        t.setDaemon(true);//随着main线程的结束，t线程也随之结束
+        t.start();//runnable
+
         //runnable  ->running| ->dead| ->blocked
 
 
@@ -34,5 +29,5 @@ public class DaemonThread {
 
 /**
  * A<---------------------------------->B
- *  ->daemonThread(health check)
- * */
+ * ->daemonThread(health check)
+ */
