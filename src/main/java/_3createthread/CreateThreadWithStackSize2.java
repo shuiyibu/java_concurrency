@@ -1,14 +1,17 @@
-package chapter3;
+package _3createthread;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/16 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
-public class CreateThread4 {
+/****
+ *
+ */
+public class CreateThreadWithStackSize2 {
 
     private static int counter = 1;
 
+    /**
+     * 260021
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         Thread t1 = new Thread(null, new Runnable() {

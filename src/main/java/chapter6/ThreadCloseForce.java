@@ -1,10 +1,8 @@
 package chapter6;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/19 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ *
+ */
 public class ThreadCloseForce {
 
 
@@ -14,14 +12,14 @@ public class ThreadCloseForce {
         long start = System.currentTimeMillis();
         service.execute(() -> {
             //load a very heavy resource.
-            /*while (true) {
+            while (true) {
 
-            }*/
-            try {
-                Thread.sleep(5000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
             }
+//            try {
+//                Thread.sleep(5000);
+//            } catch (InterruptedException e) {
+//                e.printStackTrace();
+//            }
         });
         service.shutdown(10000);
         long end = System.currentTimeMillis();

@@ -1,10 +1,13 @@
-package chapter3;
+package _3createthread;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/16 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/***
+ * ==========
+ * Thread-0
+ * Thread-1
+ * MyName
+ * Thread-2
+ * Runnable...RunnableThread
+ */
 public class CreateThread {
     public static void main(String[] args) {
         Thread t1 = new Thread();

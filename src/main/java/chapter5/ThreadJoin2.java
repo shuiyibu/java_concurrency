@@ -1,13 +1,8 @@
 package chapter5;
 
-import java.util.Optional;
-import java.util.stream.IntStream;
-
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/17 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ *
+ */
 public class ThreadJoin2 {
     public static void main(String[] args) {
         /*Thread t1 = new Thread(() -> {
@@ -31,7 +26,7 @@ public class ThreadJoin2 {
         //start httpServer
         //JettyHttpServer.start();
 
-//        Thread.currentThread().join();
+//        Thread.currentThread().join(); dead loop
 
         Thread t1 = new Thread(() -> {
 

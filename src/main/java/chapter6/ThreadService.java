@@ -1,10 +1,8 @@
 package chapter6;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/19 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ * 将Runnable线程设为执行线程的守护线程
+ */
 public class ThreadService {
 
     private Thread executeThread;
@@ -12,21 +10,18 @@ public class ThreadService {
     private boolean finished = false;
 
     public void execute(Runnable task) {
-        executeThread = new Thread() {
-            @Override
-            public void run() {
-                Thread runner = new Thread(task);
-                runner.setDaemon(true);
+        executeThread = new Thread(() -> {
+            Thread runner = new Thread(task);
+            runner.setDaemon(true); //守护线程
 
-                runner.start();
-                try {
-                    runner.join();
-                    finished = true;
-                } catch (InterruptedException e) {
-                    //e.printStackTrace();
-                }
+            runner.start();
+            try {
+                runner.join();
+                finished = true;
+            } catch (InterruptedException e) {
+                //e.printStackTrace();
             }
-        };
+        });
 
         executeThread.start();
     }
@@ -35,7 +30,7 @@ public class ThreadService {
         long currentTime = System.currentTimeMillis();
         while (!finished) {
             if ((System.currentTimeMillis() - currentTime) >= mills) {
-                System.out.println("任务超时，需要结束他!");
+                System.out.println("任务超时，需要结束它!");
                 executeThread.interrupt();
                 break;
             }

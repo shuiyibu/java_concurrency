@@ -1,4 +1,6 @@
-package chapter7;
+package chapter7.bank;
+
+import chapter7.SynchronizedRunnable;
 
 /***************************************
  * @author:Alex Wang
