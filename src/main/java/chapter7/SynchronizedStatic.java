@@ -1,14 +1,12 @@
 package chapter7;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/19 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
-public class SychronizedStatic {
+/**
+ *
+ */
+public class SynchronizedStatic {
 
     static {
-        synchronized (SychronizedStatic.class) {
+        synchronized (SynchronizedStatic.class) {
             try {
                 System.out.println("static " + Thread.currentThread().getName());
                 Thread.sleep(10_000L);

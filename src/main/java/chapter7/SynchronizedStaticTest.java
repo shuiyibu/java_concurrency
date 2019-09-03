@@ -1,31 +1,38 @@
 package chapter7;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/19 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
-public class SychronizedStaticTest {
+/**
+ *
+ */
+public class SynchronizedStaticTest {
+    /**
+     * m1 T1
+     * m3 T3
+     * m2 T2
+     *
+     * @param args
+     */
     public static void main(String[] args) {
+
         new Thread("T1") {
             @Override
             public void run() {
-                SychronizedStatic.m1();
+                SynchronizedStatic.m1();
             }
         }.start();
 
         new Thread("T2") {
             @Override
             public void run() {
-                SychronizedStatic.m2();
+                SynchronizedStatic.m2();
             }
         }.start();
 
         new Thread("T3") {
             @Override
             public void run() {
-                SychronizedStatic.m3();
+                SynchronizedStatic.m3();
             }
         }.start();
     }
 }
+

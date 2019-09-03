@@ -1,16 +1,13 @@
 package chapter7;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/19 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ *
+ */
 public class SynchronizedRunnable implements Runnable {
-
-    private int index = 1;
 
     //readonly shared data.
     private final static int MAX = 500;
+    private int index = 1;
 
     //this
     @Override
