@@ -20,6 +20,9 @@ public class SimpleThreadPool extends Thread {
     public final static DiscardPolicy DEFAULT_DISCARD_POLICY = () -> {
         throw new DiscardException("Discard This Task.");
     };
+    /**
+     * 默认任务队列大小
+     */
     private final static int DEFAULT_TASK_QUEUE_SIZE = 2000;
 
     /**
@@ -33,7 +36,7 @@ public class SimpleThreadPool extends Thread {
     private final static ThreadGroup GROUP = new ThreadGroup("Pool_Group");
 
     /**
-     * 任务队列
+     * 任务队列（缓冲）
      */
     private final static LinkedList<Runnable> TASK_QUEUE = new LinkedList<>();
 
@@ -44,6 +47,9 @@ public class SimpleThreadPool extends Thread {
 
     private static volatile int seq = 0;
 
+    /**
+     * 提交队列大小
+     */
     private final int queueSize;
 
     private final DiscardPolicy discardPolicy;
@@ -52,12 +58,24 @@ public class SimpleThreadPool extends Thread {
      */
     private int size;
 
+    /**
+     * 线程池状态
+     */
     private volatile boolean destroy = false;
 
+    /**
+     * 最小线程数
+     */
     private int min;
 
+    /**
+     * 最大线程数
+     */
     private int max;
 
+    /**
+     * 激活线程数
+     */
     private int active;
 
     public SimpleThreadPool() {
@@ -231,6 +249,9 @@ public class SimpleThreadPool extends Thread {
         FREE, RUNNING, BLOCKED, DEAD
     }
 
+    /**
+     * 拒绝策略
+     */
     public interface DiscardPolicy {
 
         void discard() throws DiscardException;
