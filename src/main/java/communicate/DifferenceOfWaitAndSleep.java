@@ -2,11 +2,9 @@ package communicate;
 
 import java.util.stream.Stream;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/20 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ *
+ */
 public class DifferenceOfWaitAndSleep {
 
     private final static Object LOCK = new Object();
@@ -16,6 +14,7 @@ public class DifferenceOfWaitAndSleep {
                 new Thread(name) {
                     @Override
                     public void run() {
+                        m1();
                         m2();
                     }
                 }.start()
@@ -25,8 +24,8 @@ public class DifferenceOfWaitAndSleep {
     public static void m1() {
         synchronized (LOCK) {
             try {
-                System.out.println("The Thread " + Thread.currentThread().getName() + " enter.");
-                Thread.sleep(20000);
+                System.out.println("The Thread m1 " + Thread.currentThread().getName() + " enter.");
+                Thread.sleep(2000);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -37,7 +36,7 @@ public class DifferenceOfWaitAndSleep {
     public static void m2() {
         synchronized (LOCK) {
             try {
-                System.out.println("The Thread " + Thread.currentThread().getName() + " enter.");
+                System.out.println("The Thread m2 " + Thread.currentThread().getName() + " enter.");
                 LOCK.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
