@@ -1,10 +1,8 @@
 package chapter8;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/2/19 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ *
+ */
 public class OtherService {
 
     private final Object lock = new Object();
