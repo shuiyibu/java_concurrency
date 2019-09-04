@@ -25,7 +25,7 @@ public class ClassActiveUse {
 //        System.out.println(Obj.salary);
 //        Obj.printSalary();
 
-//        Class.forName("com.wangwenjun.concurrent.classloader.chapter1.Obj");
+//        Class.forName("com.wangwenjun.concurrent.classloader.singleton.Obj");
 
 
 //        System.out.println(Child.age);

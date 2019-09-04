@@ -11,7 +11,7 @@ public class ClassLoaderTest {
     public static void main(String[] args) throws Exception {
 
         DecryptClassLoader classLoader = new DecryptClassLoader();
-        Class<?> aClass = classLoader.loadClass("com.wangwenjun.concurrent.classloader.chapter3.MyObject");
+        Class<?> aClass = classLoader.loadClass("com.wangwenjun.concurrent.classloader.volatiles.MyObject");
         System.out.println(aClass);
 
         Object obj = aClass.newInstance();

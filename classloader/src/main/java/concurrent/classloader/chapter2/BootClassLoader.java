@@ -12,7 +12,7 @@ public class BootClassLoader {
         System.out.println(System.getProperty("java.ext.dirs"));
 
 
-        Class<?> klass = Class.forName("com.wangwenjun.concurrent.classloader.chapter2.SimpleObject");
+        Class<?> klass = Class.forName("com.wangwenjun.concurrent.classloader.waitset.SimpleObject");
         System.out.println(klass.getClassLoader());
         System.out.println(klass.getClassLoader().getParent());
         System.out.println(klass.getClassLoader().getParent().getParent());

@@ -16,9 +16,9 @@ public class MyClassLoaderTest2 {
         MyClassLoader classLoader2 = new MyClassLoader("MyClassLoader-2");
         classLoader2.setDir("G:\\Teaching\\app\\classloader2");
 
-        Class<?> aClass = classLoader1.loadClass("com.wangwenjun.concurrent.classloader.chapter3.MyObject");
+        Class<?> aClass = classLoader1.loadClass("com.wangwenjun.concurrent.classloader.volatiles.MyObject");
         System.out.println(aClass.hashCode());
-        Class<?> aClass2 = classLoader2.loadClass("com.wangwenjun.concurrent.classloader.chapter3.MyObject");
+        Class<?> aClass2 = classLoader2.loadClass("com.wangwenjun.concurrent.classloader.volatiles.MyObject");
         System.out.println(aClass2.hashCode());
         //sSystem.out.println(((MyClassLoader) aClass.getClassLoader()).getClassLoaderName());
     }

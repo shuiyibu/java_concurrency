@@ -34,6 +34,6 @@ public final class EncryptUtils {
     }
 
     public static void main(String[] args) {
-        doEncrypt("G:\\Teaching\\app\\classloader3\\com\\wangwenjun\\concurrent\\classloader\\chapter3\\MyObject.class", "G:\\Teaching\\app\\classloader3\\com\\wangwenjun\\concurrent\\classloader\\chapter3\\MyObject.class1");
+        doEncrypt("G:\\Teaching\\app\\classloader3\\com\\wangwenjun\\concurrent\\classloader\\volatiles\\MyObject.class", "G:\\Teaching\\app\\classloader3\\com\\wangwenjun\\concurrent\\classloader\\volatiles\\MyObject.class1");
     }
 }

@@ -1,26 +1,29 @@
-package concurrents.chapter2;
+package concurrents.waitset;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/3/12 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+import java.util.Optional;
+import java.util.stream.IntStream;
+
+import static java.lang.System.out;
+
+/***
+ *
+ */
 public class WaitSet {
 
     private static final Object LOCK = new Object();
 
     private static void work() {
         synchronized (LOCK) {
-            System.out.println("Begin....");
+            out.println("Begin....");
 
             try {
-                System.out.println("Thread will coming");
+                out.println("Thread will coming");
                 LOCK.wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
 
-            System.out.println("Thread will out.");
+            out.println("Thread will out.");
         }
     }
 
@@ -45,15 +48,15 @@ public class WaitSet {
             LOCK.notify();
         }
 
-/*        IntStream.rangeClosed(1, 10).forEach(i ->
+        IntStream.rangeClosed(1, 10).forEach(i ->
                 new Thread(String.valueOf(i)) {
                     @Override
                     public void run() {
                         synchronized (LOCK) {
                             try {
-                                Optional.of(Thread.currentThread().getName() + " will come to wait set.").ifPresent(System.out::println);
+                                Optional.of(Thread.currentThread().getName() + " will come to wait set.").ifPresent(out::println);
                                 LOCK.wait();
-                                Optional.of(Thread.currentThread().getName() + " will leave to wait set.").ifPresent(System.out::println);
+                                Optional.of(Thread.currentThread().getName() + " will leave to wait set.").ifPresent(out::println);
                             } catch (InterruptedException e) {
                                 e.printStackTrace();
                             }
@@ -63,7 +66,7 @@ public class WaitSet {
         );
 
         Thread.sleep(3000);
-
+        out.println("==============================");
         IntStream.rangeClosed(1, 10).forEach(i ->
                 {
                     synchronized (LOCK) {
@@ -75,6 +78,6 @@ public class WaitSet {
                         }
                     }
                 }
-        );*/
+        );
     }
 }
