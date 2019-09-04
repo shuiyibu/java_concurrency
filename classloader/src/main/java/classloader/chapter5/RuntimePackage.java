@@ -1,4 +1,4 @@
-package concurrent.classloader.chapter5;
+package classloader.chapter5;
 
 /***************************************
  * @author:Alex Wang
