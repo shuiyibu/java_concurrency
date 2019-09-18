@@ -2,11 +2,9 @@ package classloader.chapter1;
 
 import java.util.concurrent.atomic.AtomicBoolean;
 
-/***************************************
- * @author:Alex Wang
- * @Date:2017/4/2 QQ:532500648
- * QQ交流群:286081824
- ***************************************/
+/**
+ *
+ */
 public class ClinitThreadTest {
 
     public static void main(String[] args) {
